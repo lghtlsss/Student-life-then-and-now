@@ -144,3 +144,572 @@
         padding: 40px 6%;
     }
 }
+
+
+.compare-screen {
+    background: #f7f5f0;
+    color: #292929;
+    padding-bottom: 60px;
+}
+
+/* Заголовок */
+.compare-hero {
+    padding: 75px 8%;
+    text-align: center;
+    background: #282d32;
+    color: white;
+}
+
+.compare-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    margin-bottom: 20px;
+}
+
+.compare-hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* Секции сравнения */
+.compare-topic {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 30px 15px;
+}
+
+.topic-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.topic-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #a66c42;
+}
+
+.topic-heading h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 8px;
+}
+
+.topic-heading p {
+    color: #6b6b6b;
+    line-height: 1.6;
+}
+
+/* Две карточки */
+.compare-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.compare-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.compare-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.era-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: #eee8df;
+    color: #70492f;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Итоговый блок */
+.compare-conclusion {
+    max-width: 1000px;
+    margin: 65px auto 0;
+    padding: 40px;
+    text-align: center;
+    background: #eae5dc;
+    border-radius: 14px;
+}
+
+.compare-conclusion h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.compare-conclusion p {
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Планшеты и телефоны */
+@media (max-width: 768px) {
+    .compare-hero {
+        padding: 50px 6%;
+    }
+
+    .compare-topic {
+        padding: 40px 6% 10px;
+    }
+
+    .compare-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .compare-card img {
+        height: 250px;
+    }
+
+    .compare-conclusion {
+        margin: 40px 6% 0;
+        padding: 28px 20px;
+    }
+}
+
+
+/* Общая страница */
+.quiz-screen {
+    background: #f7f5f0;
+    color: #292929;
+    padding-bottom: 60px;
+}
+
+/* Верхний баннер */
+.quiz-hero {
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+.quiz-hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quiz-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(25, 27, 29, 0.85),
+        rgba(25, 27, 29, 0.25)
+    );
+}
+
+.quiz-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 60px 8%;
+}
+
+.quiz-label {
+    color: #e5c18a;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.quiz-hero h1 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.15;
+    margin: 18px 0;
+}
+
+.quiz-hero p {
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Заголовок над квизами */
+.quiz-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 55px 25px 35px;
+}
+
+.quiz-intro h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+.quiz-intro p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Контейнер динамических карточек */
+.quiz-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Карточки, созданные JavaScript */
+.quiz-grid .card {
+    width: 100% !important;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.quiz-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Картинка карточки */
+.quiz-grid .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Содержимое карточки */
+.quiz-grid .card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.quiz-grid .card-title {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.quiz-grid .card-text {
+    color: #626262;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Кнопка */
+.quiz-grid .btn-success {
+    margin-top: auto;
+    background: #805638;
+    border-color: #805638;
+    border-radius: 8px;
+    padding: 11px 22px;
+    font-weight: 600;
+}
+
+.quiz-grid .btn-success:hover {
+    background: #62412b;
+    border-color: #62412b;
+}
+
+/* Нижний блок с фото */
+.quiz-bottom {
+    max-width: 1100px;
+    margin: 65px auto 0;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.quiz-bottom img {
+    width: 45%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.quiz-bottom-text {
+    flex: 1;
+}
+
+.quiz-bottom-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.quiz-bottom-text p {
+    color: #626262;
+    line-height: 1.8;
+}
+
+/* Планшеты */
+@media (max-width: 900px) {
+    .quiz-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+    .quiz-hero {
+        min-height: 380px;
+    }
+
+    .quiz-hero-content {
+        padding: 40px 6%;
+    }
+
+    .quiz-grid {
+        grid-template-columns: 1fr;
+        padding: 0 6%;
+    }
+
+    .quiz-grid .card-img-top {
+        height: 240px;
+    }
+
+    .quiz-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 45px;
+        padding: 0 6%;
+    }
+
+    .quiz-bottom img {
+        width: 100%;
+        height: 230px;
+    }
+}
+
+#quizList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 30px;
+}
+
+#quizList .card {
+    flex: 0 0 18rem;
+    width: 18rem;
+    overflow: hidden;
+}
+
+#quizList .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* ===== Экран прохождения квиза ===== */
+
+#quiz-game {
+    max-width: 850px;
+    margin: 55px auto;
+    padding: 40px;
+    background: #ffffff;
+    color: #292929;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(55, 42, 30, 0.09);
+}
+
+/* Текст вопроса */
+#question {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Контейнер вариантов ответа */
+#answers {
+    display: grid;
+    gap: 12px;
+}
+
+/* Кнопки ответов */
+#answers .btn.btn-outline-primary {
+    padding: 16px 20px;
+    border: 2px solid #e5ded5;
+    border-radius: 12px;
+    background: #faf8f5;
+    color: #38332e;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+/* Наведение на доступный ответ */
+#answers .btn.btn-outline-primary:not(:disabled):hover {
+    background: #f0e5d8;
+    border-color: #805638;
+    color: #382719;
+    transform: translateY(-2px);
+}
+
+/* Заблокированные ответы */
+#answers .btn:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* Сообщение: верно или неверно */
+#result {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Пояснение к ответу */
+#explanation {
+    padding: 15px 18px;
+    margin: 12px 0 25px;
+    background: #f7f3ed;
+    border-left: 4px solid #b08a63;
+    border-radius: 6px;
+    color: #5b5148;
+    line-height: 1.7;
+}
+
+/* Кнопка перехода к следующему вопросу */
+#nextButton {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #805638;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+#nextButton:hover:not(:disabled) {
+    background: #62412b;
+}
+
+#nextButton:disabled {
+    background: #c8b9aa;
+    cursor: not-allowed;
+}
+
+/* ===== Экран результатов ===== */
+
+#quiz-results {
+    max-width: 750px;
+    margin: 55px auto;
+    padding: 45px 40px;
+    background: #ffffff;
+    color: #292929;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(55, 42, 30, 0.09);
+}
+
+#resultsTitle {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+/* Количество правильных ответов */
+#resultsScore {
+    display: inline-block;
+    margin: 5px 0 20px;
+    padding: 16px 24px;
+    background: #f4ece2;
+    border-radius: 12px;
+    color: #62412b;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* Итоговый комментарий */
+#resultsMessage {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    color: #625b54;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Кнопки результатов */
+#quiz-results button {
+    margin: 5px;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+/* Адаптация под телефоны */
+@media (max-width: 600px) {
+    #quiz-game,
+    #quiz-results {
+        margin: 25px 12px;
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+
+    #answers .btn.btn-outline-primary {
+        padding: 14px;
+    }
+
+    #resultsScore {
+        font-size: 1rem;
+        padding: 13px 16px;
+    }
+
+    #quiz-results button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+#explanation:empty {
+    display: none;
+}

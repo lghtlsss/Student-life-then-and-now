@@ -131,7 +131,7 @@ async function quizPageLoad() {
             // Карточка
             const divisor = document.createElement("div");
             divisor.classList.add("card");
-            divisor.style.width = "18rem";
+            divisor.style.width = "20rem";
 
             // Картинка
             const image = document.createElement("img");

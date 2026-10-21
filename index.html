@@ -9,17 +9,52 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="d-inline-flex ">
-        <button onclick="showScreen('home')">
-            На главную
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#" onclick="showScreen('home'); return false;">
+            Студенчество
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Открыть меню"
+        >
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <button onclick="showScreen('compare')">
-            Сравнение
-        </button>
-        <button onclick="showScreen('quizzes'); quizPageLoad()">
-            Квизы
-        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="navbar-nav ms-auto gap-lg-2">
+
+                <button
+                    class="nav-link active"
+                    onclick="showScreen('home'); setActiveNav(this)"
+                >
+                    Главная
+                </button>
+
+                <button
+                    class="nav-link"
+                    onclick="showScreen('compare'); setActiveNav(this)"
+                >
+                    Сравнение
+                </button>
+
+                <button
+                    class="nav-link"
+                    onclick="showScreen('quizzes'); quizPageLoad(); setActiveNav(this)"
+                >
+                    Квизы
+                </button>
+
+            </div>
+        </div>
+
     </div>
 </nav>
 <!-- Здесь нужно сделать три секции: главная, сравнение и квиз и в js прописать что по кнопкам hidden переставляется-->
@@ -87,16 +122,191 @@
 
 
 
-<section id="compare" class="screen" hidden>
-    <p style="color: red">Страница сравнения</p>
-    <!--Здесь будут расположены карточки сравнения старой/новой системы-->
+
+<section id="compare" class="screen compare-screen">
+
+    <!-- Заголовок страницы -->
+    <div class="compare-hero">
+        <h1>Студенчество: тогда и сейчас</h1>
+        <p>
+            Две эпохи, разные возможности, но одна студенческая жизнь.
+            Сравни, как учились, где жили и как отдыхали студенты СССР
+            и современной России.
+        </p>
+    </div>
+
+    <!-- Тема 1: Учёба -->
+    <article class="compare-topic">
+        <div class="topic-heading">
+            <span class="topic-number">01</span>
+            <div>
+                <h2>Учёба и технологии</h2>
+                <p>От конспектов от руки до цифровых материалов</p>
+            </div>
+        </div>
+
+        <div class="compare-cards">
+            <div class="compare-card">
+                <img src="images/compare_page_1.jpg"
+                     alt="Студенты советского университета на лекции">
+                <div class="card-content">
+                    <span class="era-label">СССР</span>
+                    <h3>Бумага и библиотеки</h3>
+                    <p>
+                        Студенты записывали лекции от руки, занимались
+                        по печатным учебникам и искали нужную литературу
+                        в библиотеках.
+                    </p>
+                </div>
+            </div>
+
+            <div class="compare-card">
+                <img src="images/compare_page_2.jpg"
+                     alt="Современные студенты с ноутбуками">
+                <div class="card-content">
+                    <span class="era-label">Россия сегодня</span>
+                    <h3>Цифровая учёба</h3>
+                    <p>
+                        Электронные учебники, онлайн-курсы, цифровые
+                        библиотеки и ноутбуки помогают получать
+                        информацию быстрее.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Тема 2: Общежитие -->
+    <article class="compare-topic">
+        <div class="topic-heading">
+            <span class="topic-number">02</span>
+            <div>
+                <h2>Общежитие и быт</h2>
+                <p>Как выглядела повседневная жизнь студентов</p>
+            </div>
+        </div>
+
+        <div class="compare-cards">
+            <div class="compare-card">
+                <img src="images/compare_page_3.jpg"
+                     alt="Комната советского студенческого общежития">
+                <div class="card-content">
+                    <span class="era-label">СССР</span>
+                    <h3>Жизнь в коллективе</h3>
+                    <p>
+                        Общежитие становилось местом учёбы, общения
+                        и самостоятельной жизни. Условия зависели
+                        от университета и времени.
+                    </p>
+                </div>
+            </div>
+
+            <div class="compare-card">
+                <img src="images/compare_page_4.jpg"
+                     alt="Комната современного студенческого общежития">
+                <div class="card-content">
+                    <span class="era-label">Россия сегодня</span>
+                    <h3>Больше бытовых возможностей</h3>
+                    <p>
+                        В современных общежитиях могут быть оборудованные
+                        кухни, рабочие места, бытовая техника и доступ
+                        к интернету. Условия различаются между вузами.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Тема 3: Досуг -->
+    <article class="compare-topic">
+        <div class="topic-heading">
+            <span class="topic-number">03</span>
+            <div>
+                <h2>Друзья и свободное время</h2>
+                <p>Что объединяло студентов разных поколений</p>
+            </div>
+        </div>
+
+        <div class="compare-cards">
+            <div class="compare-card">
+                <img src="images/compare_page_5.jpg"
+                     alt="Советские студенты вместе проводят свободное время">
+                <div class="card-content">
+                    <span class="era-label">СССР</span>
+                    <h3>Кружки и общие дела</h3>
+                    <p>
+                        Студенческие клубы, спортивные секции,
+                        танцы, походы и строительные отряды
+                        помогали находить друзей и проводить время вместе.
+                    </p>
+                </div>
+            </div>
+
+            <div class="compare-card">
+                <img src="images/compare_page_6.jpg"
+                     alt="Современные студенты общаются в кампусе">
+                <div class="card-content">
+                    <span class="era-label">Россия сегодня</span>
+                    <h3>Мир возможностей</h3>
+                    <p>
+                        Университетские мероприятия, волонтёрство,
+                        студенческие сообщества, совместные проекты
+                        и общение как лично, так и в интернете.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Итог -->
+    <div class="compare-conclusion">
+        <h2>Что изменилось, а что осталось?</h2>
+        <p>
+            Технологии, условия жизни и способы общения меняются,
+            но желание учиться, дружить и находить своё место в мире
+            остаётся частью студенческой жизни.
+        </p>
+    </div>
+
 </section>
 
-<section id="quizzes" class="screen" hidden>
-    <!--Очевидно здесь квиз-->
-    <p style="color: red">Квизы</p>
-    <div id="quizList" class="d-flex flex-wrap gap-3"></div>
 
+<section id="quizzes" class="screen quiz-screen" hidden>
+
+    <div class="quiz-hero">
+        <img src="images/quiz_page_1.jpg" alt="Студенты в аудитории">
+
+        <div class="quiz-hero-content">
+            <span class="quiz-label">ПРОВЕРЬ СЕБЯ</span>
+            <h1>Готов отправиться в прошлое?</h1>
+            <p>
+                Проверь свои знания о студенческой жизни СССР
+                и современной России. Выбирай квиз, отвечай на вопросы
+                и узнай, насколько хорошо ты знаешь две эпохи.
+            </p>
+        </div>
+    </div>
+
+    <div class="quiz-intro">
+        <h2>Выбирай свой квиз</h2>
+        <p>Три испытания — три взгляда на студенчество.</p>
+    </div>
+
+    <!-- Существующие карточки квизов -->
+    <div id="quizList"></div>
+
+    <div class="quiz-bottom">
+        <img src="images/quiz_page_2.jpg" alt="Студенты готовятся к занятиям">
+
+        <div class="quiz-bottom-text">
+            <h2>Не бойся ошибаться</h2>
+            <p>
+                Каждый вопрос — возможность узнать что-то новое.
+                Проверь себя и взгляни на студенческую жизнь
+                с другой стороны.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section id="quiz-game" class="screen" hidden>
