@@ -831,3 +831,20 @@
     opacity: 0.5;
     cursor: default;
 }
+
+.result-right,
+.result-wrong {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.result-right {
+    color: #587a50;
+}
+
+.result-wrong {
+    color: #a85f58;
+}

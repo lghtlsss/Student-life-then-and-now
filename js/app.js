@@ -94,8 +94,10 @@ async function loadQuiz(quizId) {
         if (currQuestion.correct == Number(answerId)) {
             score++
             resultElement.textContent = "Верно!"
+            resultElement.className = "result-right"
         } else {
             resultElement.textContent = "Неверно!"
+            resultElement.className = "result-wrong"
         }
         explanationElement.textContent = currQuestion.explanation
 
