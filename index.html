@@ -16,7 +16,7 @@
         <button onclick="showScreen('compare')">
             Сравнение
         </button>
-        <button onclick="showScreen('quizzes')">
+        <button onclick="showScreen('quizzes'); quizPageLoad()">
             Квизы
         </button>
     </div>
@@ -44,8 +44,8 @@
 <section id="quizzes" class="screen" hidden>
     <!--Очевидно здесь квиз-->
     <p style="color: red">Квизы</p>
-    <!--три карточки с квизами-->
-    <!-- 1) -->
+    <!--три карточки с квизами нужно сделать чтобы название, картинку и описание брало с jsonа-->
+    <!-- 1)
     <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
@@ -54,7 +54,7 @@
             <button type="button" class="btn btn-success" onclick="loadQuiz(0)">Начать</button>
         </div>
     </div>
-    <!-- 2) -->
+     2)
     <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
@@ -62,7 +62,8 @@
             <p class="card-text">Описание квиза</p>
             <button type="button" class="btn btn-success" onclick="loadQuiz(1)">Начать</button>
         </div>
-    </div>
+    </div>-->
+    <div id="quizList" class="d-flex flex-wrap gap-3"></div>
 
 </section>
 
@@ -80,6 +81,5 @@
 </section>
 
 <script src="js/app.js"></script>
-<script src="js/quiz.js"></script>
 </body>
 </html>
