@@ -816,3 +816,18 @@
 #quizList > .card .btn {
     margin-top: auto;
 }
+
+/* Выбранный ответ */
+.selected-answer {
+    background-color: #d6b995 !important;
+    color: #4b3526 !important;
+    border: 2px solid #a67c52 !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 8px rgba(166, 124, 82, 0.2);
+}
+
+/* Остальные заблокированные ответы */
+#answers button:disabled:not(.selected-answer) {
+    opacity: 0.5;
+    cursor: default;
+}

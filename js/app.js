@@ -104,6 +104,8 @@ async function loadQuiz(quizId) {
         answerButtons.forEach(function (button) {
             button.disabled = true
         })
+
+        answerButtons[Number(answerId)].classList.add("selected-answer")
         nextButton.disabled = false
 
     }
