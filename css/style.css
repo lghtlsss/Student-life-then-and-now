@@ -713,3 +713,106 @@
 #explanation:empty {
     display: none;
 }
+
+
+.student-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    padding: 16px 0;
+
+    /* Замени путь на свою картинку */
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.84),
+            rgba(255, 255, 255, 0.84)
+        ),
+        url("../img/navbar-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 1px solid rgba(220, 225, 235, 0.8);
+    box-shadow: 0 3px 15px rgba(30, 45, 70, 0.07);
+}
+
+/* Название проекта */
+.student-navbar .navbar-brand {
+    color: #263547;
+    font-size: 1.4rem;
+    letter-spacing: -0.4px;
+}
+
+/* Кнопки */
+.student-navbar .nav-link {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.45);
+    color: #34445c;
+
+    font-size: 0.96rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.student-navbar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.85);
+    color: #315efb;
+}
+
+.student-navbar .nav-link.active {
+    background: #e5edff;
+    color: #315efb;
+    font-weight: 600;
+}
+
+/* На узких экранах */
+@media (max-width: 600px) {
+    .student-navbar {
+        padding: 10px 0;
+    }
+
+    .student-navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .student-navbar .navbar-nav {
+        width: 100%;
+        justify-content: center;
+        gap: 4px !important;
+    }
+
+    .student-navbar .nav-link {
+        padding: 9px 10px;
+        font-size: 0.82rem;
+    }
+}
+
+#quizList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+#quizList > .card {
+    display: flex;
+    flex-direction: column;
+}
+
+#quizList > .card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#quizList > .card .btn {
+    margin-top: auto;
+}

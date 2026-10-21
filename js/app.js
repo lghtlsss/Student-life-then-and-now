@@ -7,6 +7,21 @@ function showScreen(screenId) {
 
     const selectedScreen = document.getElementById(screenId);
     selectedScreen.hidden = false;
+
+    // Обновляем активную кнопку навбара
+    const navButtons = document.querySelectorAll(".student-navbar .nav-link");
+
+    navButtons.forEach(function (button) {
+        button.classList.remove("active");
+    });
+
+    const activeButton = document.querySelector(
+        `.student-navbar .nav-link[data-screen="${screenId}"]`
+    );
+
+    if (activeButton) {
+        activeButton.classList.add("active");
+    }
 }
 
 const allQuizzes = ["data/sssr_student.json", "data/modern_student.json", "data/student_then_now.json"]
@@ -141,7 +156,9 @@ async function quizPageLoad() {
 
             // Тело карточки
             const cardBody = document.createElement("div");
-            cardBody.classList.add("card-body");
+            cardBody.classList.add("card-body",
+                                    "d-flex",
+                                    "flex-column");
 
             // Заголовок
             const title = document.createElement("h5");
@@ -156,7 +173,7 @@ async function quizPageLoad() {
             // Кнопка
             const button = document.createElement("button");
             button.type = "button";
-            button.classList.add("btn", "btn-success");
+            button.classList.add("btn", "btn-success",  "mt-auto");
             button.textContent = "Начать";
 
             button.addEventListener("click", function () {
