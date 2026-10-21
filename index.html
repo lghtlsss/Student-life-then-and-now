@@ -44,25 +44,6 @@
 <section id="quizzes" class="screen" hidden>
     <!--Очевидно здесь квиз-->
     <p style="color: red">Квизы</p>
-    <!--три карточки с квизами нужно сделать чтобы название, картинку и описание брало с jsonа-->
-    <!-- 1)
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Студенчество в СССР</h5>
-            <p class="card-text">Сможешь ли ты справиться со студенческой жизнью в СССР</p>
-            <button type="button" class="btn btn-success" onclick="loadQuiz(0)">Начать</button>
-        </div>
-    </div>
-     2)
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Насколько ты знаешь студенческую жизнь?</h5>
-            <p class="card-text">Описание квиза</p>
-            <button type="button" class="btn btn-success" onclick="loadQuiz(1)">Начать</button>
-        </div>
-    </div>-->
     <div id="quizList" class="d-flex flex-wrap gap-3"></div>
 
 </section>
@@ -76,8 +57,18 @@
     <button id="nextButton">Следующий вопрос</button>
 </section>
 
-<section id="quiz-results" class="screen" hidden>
-    <!-- Результаты -->
+ <section id="quiz-results" class="screen" hidden>
+    <h2 id="resultsTitle">Результаты квиза</h2>
+    <p id="resultsScore"></p>
+    <p id="resultsMessage"></p>
+
+    <button class="btn btn-primary" onclick="showScreen('quizzes'); quizPageLoad()">
+        Вернуться к квизам
+    </button>
+
+    <button class="btn btn-outline-secondary" onclick="showScreen('home')">
+        На главную
+    </button>
 </section>
 
 <script src="js/app.js"></script>

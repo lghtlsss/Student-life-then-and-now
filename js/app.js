@@ -25,6 +25,9 @@ async function loadQuiz(quizId) {
     const answersElement = document.getElementById("answers")
     const resultElement = document.getElementById("result")
     const explanationElement = document.getElementById("explanation")
+    const resultsTitle = document.getElementById("resultsTitle");
+    const resultsScore = document.getElementById("resultsScore");
+    const resultsMessage = document.getElementById("resultsMessage");
 
     const nextButton = document.getElementById("nextButton")
 
@@ -33,6 +36,21 @@ async function loadQuiz(quizId) {
         const currQuestion = quiz.questions[currQuestionIndex]
         questionElement.textContent = currQuestion.question
         answersElement.textContent = currQuestion.answers
+
+        nextButton.textContent =
+    currQuestionIndex === quiz.questions.length - 1
+        ? "Показать результат"
+        : "Следующий вопрос";
+
+    nextButton.disabled = true;
+    nextButton.onclick = function () {
+        if (currQuestionIndex < quiz.questions.length - 1) {
+            currQuestionIndex++;
+            changeQuestion();
+        } else {
+            showResults();
+        }
+    };
 
         answersElement.innerHTML = ""
         resultElement.innerHTML = ""
@@ -54,15 +72,7 @@ async function loadQuiz(quizId) {
 
     changeQuestion();
 
-    nextButton.addEventListener
-    ("click",
-        function () {
-            currQuestionIndex++
-            if (currQuestionIndex < quiz.questions.length) {
-                changeQuestion()
-            }
-        }
-    )
+
 
     function checkAnswer(answerId) {
         const currQuestion = quiz.questions[currQuestionIndex]
@@ -79,8 +89,31 @@ async function loadQuiz(quizId) {
         answerButtons.forEach(function (button) {
             button.disabled = true
         })
+        nextButton.disabled = false
 
     }
+
+    function showResults() {
+    const totalQuestions = quiz.questions.length;
+    const percentage = Math.round(score / totalQuestions * 100);
+
+    resultsTitle.textContent = quiz.title;
+
+    resultsScore.textContent =
+        `Правильных ответов: ${score} из ${totalQuestions} (${percentage}%)`;
+
+    if (percentage === 100) {
+        resultsMessage.textContent = "Отличный результат! Ты ответил правильно на все вопросы!";
+    } else if (percentage >= 70) {
+        resultsMessage.textContent = "Хороший результат! Ты неплохо разбираешься в теме.";
+    } else if (percentage >= 40) {
+        resultsMessage.textContent = "Неплохо! Но есть ещё что узнать о студенчестве.";
+    } else {
+        resultsMessage.textContent = "Кажется, пора узнать побольше о студенческой жизни этой эпохи!";
+    }
+
+    showScreen("quiz-results");
+}
 }
 
 
